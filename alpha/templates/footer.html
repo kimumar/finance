@@ -58,18 +58,27 @@
             </div>
             <div class="col-md-3 py-md-5 py-4 aside-stretch-right pl-lg-5">
                 <h2 class="footer-heading">Free consultation</h2>
-                <form action="#" class="form-consultation">
+                {% if messages %}
+                    {% for message in messages  %}
+                    <div  class="alert alert-{{message.tags}}" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                        {{message.name}}
+                        {{ message }}
+                    </div>									  
+                    {% endfor %}								  
+                {% endif %}
+                <form action="#" class="form-consultation" method="post">
+                    {% csrf_token %}
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Your Name">
+        <input type="text" class="form-control" name="name" placeholder="Your Name">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Your Email">
+        <input type="text" name="email" class="form-control" placeholder="Your Email">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Subject">
-      </div>
-      <div class="form-group">
-        <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
+        <textarea name="message" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
       </div>
       <div class="form-group">
           <button type="submit" class="form-control submit px-3">Send A Message</button>

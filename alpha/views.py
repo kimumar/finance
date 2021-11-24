@@ -28,7 +28,7 @@ def about(request):
             name,
             message,
             'kimumar55@gmail.com',
-            ['info@noziroh.com.ng'],
+            ['oladeleumaradisa19@gmail.com'],
             fail_silently=False)
 
     return render(request, 'about.html')
@@ -43,7 +43,7 @@ def services(request):
             name,
             message,
             'kimumar55@gmail.com',
-            ['info@noziroh.com.ng'],
+            ['nozprofessionals@gmail.com'],
             fail_silently=False)
     
     return render(request, 'services.html')
@@ -58,7 +58,7 @@ def contact(request):
             name,
             message,
             'kimumar55@gmail.com',
-            ['info@noziroh.com.ng'],
+            ['oladeleumaradisa19@gmail.com'],
             fail_silently=False)
     
     return render(request, 'contact.html')
